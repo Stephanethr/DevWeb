@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Test</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Test">
+    <meta name="keywords" content="Test">
+    <meta name="author" content="Test">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test.css">
+    <script defer>
+        let sequence = [1,1,2,2,3,3,5,5,8,8,13,13];
+        let size = sequence.length;
+        let paires = []
+        let impaires = []
+        for (var i = 0; i < size; i++) {
+            console.log(sequence[i]);
+            if (sequence[i]%2){
+                paires.push(sequence[i]);
+            }
+            else{
+                impaires.push(sequence[i]);
+            }
+        }
+
+        
+
+        console.log(paires);
+        console.log(impaires);
+    </script>
+</head>
+<body>
+    <h1>Test</h1>
+    <p>Test</p>
+</html>
