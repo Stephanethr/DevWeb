@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Exo 3</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Test">
+    <meta name="keywords" content="Test">
+    <meta name="author" content="Test">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test.css">
+    <script defer>
+        let sequence = [1,1,2,3,5,8,13];
+        const double = sequence.map((item) => item * 2);
+        const paires = sequence.filter((item) => item % 2 === 0);
+        const impaires = sequence.filter((item) => item % 2 !== 0);
+        const somme = sequence.reduce((acc, item) => acc + item, 0);
+
+        
+        console.log(double);
+        console.log(paires);
+        console.log(impaires);
+        console.log(somme);
+
+
+    </script>
+</head>
+<body>
+    <h1>Exo 3</h1>
+    <p>Exo 3</p>
+</html>
