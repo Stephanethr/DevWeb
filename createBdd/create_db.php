@@ -1,6 +1,6 @@
 <?php
 
-include "connect.php";
+include "config.php";
 // Connexion à MySQL
 try {
     $pdo = new PDO("mysql:host=$host",  $username, $password);
@@ -18,7 +18,6 @@ $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
 // Exécuter la requête de création de la base de données
 try {
     $pdo->exec($sql);
-    echo "La base de données '$dbname' a été créée avec succès.<br>";
 } catch (PDOException $e) {
     die("Erreur lors de la création de la base de données : " . $e->getMessage());
 }

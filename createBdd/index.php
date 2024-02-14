@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Uploader un fichier CSV</h1>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
+    <form action="changeSkill.php" method="post" enctype="multipart/form-data">
         <input type="file" name="csv_file" accept=".csv">
         <button type="submit" name="submit">Envoyer</button>
     </form>
