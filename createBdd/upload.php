@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -9,11 +9,17 @@
 </head>
 
 <body>
+    <h1>Uploader un fichier CSV</h1>
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="csv_file" accept=".csv">
+        <button type="submit" name="submit">Envoyer</button>
+    </form>
+
     <?php
     // Vérifier si un fichier a été téléversé
     if (isset($_FILES["csv_file"])) {
         // Paramètres de connexion à la base de données
-        include 'create_db.php';
+        include 'createDB.php';
 
         // Connexion à la base de données
         try {
@@ -44,6 +50,7 @@
                     $promo = $data[2];
 
                     // Exécution de la requête d'insertion avec les valeurs de la ligne
+
                     $stmt->bindParam(':nom', $nom);
                     $stmt->bindParam(':prenom', $prenom);
                     $stmt->bindParam(':promo', $promo);
@@ -51,16 +58,14 @@
                 }
             }
             fclose($handle);
-            echo "Les données ont été insérées avec succès dans la base de données.";
+            echo "<p>Les données ont été insérées avec succès dans la base de données.</p>";
+            echo "<p>Vous serez redirigé sur la page d'accueil dans 5 secondes.</p>";
+            header("refresh:5;url=index.php");
+            exit;
         } else {
             echo "Impossible d'ouvrir le fichier CSV.";
         }
-    } else {
-        echo "Erreur lors du téléversement du fichier.";
     }
-
-
-    echo "<br><a href='index.php' class='button'>Renseigner ses skills</a>";
     ?>
 </body>
 
